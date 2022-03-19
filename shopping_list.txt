@@ -2,4 +2,4 @@ Milk x1
 Eggs x5
 Avocado x2
 Bread x1
-Water x3
+Water x4
