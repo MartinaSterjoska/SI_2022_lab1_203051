@@ -1,5 +1,5 @@
-Milk
-Eggs
-Avocado
-Bread
-Water
+Milk x1
+Eggs x5
+Avocado x2
+Bread x1
+Water x3
