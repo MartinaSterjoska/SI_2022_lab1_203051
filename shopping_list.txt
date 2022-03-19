@@ -1,5 +1,6 @@
 Milk x1
-Eggs x5
+Eggs x4
 Avocado x2
-Bread x1
-Water x3
+Tuna x1
+Water x4
+Lemon x3
