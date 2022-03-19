@@ -3,3 +3,5 @@ Eggs x4
 Avocado x2
 Bread x1
 Water x4
+Lemon x3
+
