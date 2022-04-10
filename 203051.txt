@@ -1,3 +1,39 @@
+1. Мојот GitHub профил е креиран под името https://github.com/MartinaSterjoska
+2. Во делот settings од main менуваме во master.
+3. Го поставуваме на приватен и го селектираме README фајлот.
+4. Со креирање на репозиториумот правиме клонирање на нашиот компјутер со помош на
+наредбата git clone LinkNaRepozitorium
+5. По клонирањето ја додаваме текстуалната датотека shopping_list.txt и во неа
+јас рачно внесов 5 производи, а по тоа правам commit со дадената порака. Тоа го правам
+со помош на следниве команди: git add shopping_list.txt и git commit -m  "Add 5 items to the shopping list"
+6. Додаваме во текст документот количина до секој од производите и правиме комит како претходно
+7. Креирам две гранки со помош на следниве команди: git checkout -b branch1, исто и за branch2
+9. Синхронизацијата ја правиме со помош на командата push, така што тоа го правиме и за master гранката, како и
+за branch1 и branch2.
+10. Се префрламе на гранката branch1: git checkout branch1
+11. Ја менуваме количината на петтата ставка и правиме commit за таа промена.
+12. Се враќаме на master гранката: git checkout master
+13. Ја менуваме количината на втората ставка во листата и правиме комит и за таа промена.
+14. Повторно правиме синхронизација со помош на push командада.
+15. Се префламе на на гранката branch2 -> git checkout branch2
+16. Го менуваме името на ставката 4 и правиме комит: git commit -a -m “Modify item #4”
+17. Логовите се во кодот подолу.
+18. Додавам 6та ставка во документот, такашто го менувам и последниот комит.
+Тоа го правам на следниов начин: git add shopping_list.txt, git commit --amend -m "Modify item #4 and add item #6"
+19. Логовите се во дадениот код.
+20. Се префрламе на мастер гранката и со помош на merge ја спојуваме со branch1. Стратегијата по која се спојуваат
+овие две гранки се нарекува Recursive strategy, такашто процесот се одвива рекурзивно со помош на merge commit
+21. Кога ќе пробаме да ја споиме и branch2 кон master како што е во барањето, ни дава дека настанало конфликт, односно
+ќе треба да промениме односно избришеме некоја ставка, производ, во текст документот. Со тоа би го решиле конфликтот.
+По тој чекор во cmd запишуваме: 
+git commit -a -m "Merge branch2" и git merge branch2, по што успешно ќе се спојат двете гранки.
+22. Во овој чекор го додавам документот каде што ја водам целата документација во самиот репозиториум и додавам комит:
+git add 203051.txt и git commit -m "Add docs"
+23. Синхронизацијата повторно ја правиме со помош на push:
+git push origin master, git push origin branch1, git push origin branch2, по што успешно ќе се синхронизира.
+
+Во долунаведениот код на крајот е прикажан и граф како изгледа целиот процес.
+
 C:\Users\sterj>git clone https://github.com/MartinaSterjoska/SI_2022_lab1_203051
 Cloning into 'SI_2022_lab1_203051'...
 remote: Enumerating objects: 6, done.
@@ -136,3 +172,49 @@ Author: Martina Sterjoska <100304608+MartinaSterjoska@users.noreply.github.com>
 Date:   Sat Mar 19 19:09:33 2022 +0100
 
     Initial commit
+C:\Users\sterj\SI_2022_lab1_203051>git commit -a -m "Merge branch2"
+[master 8cb17f0] Merge branch2
+
+C:\Users\sterj\SI_2022_lab1_203051>git merge branch2
+Already up to date.
+
+C:\Users\sterj\SI_2022_lab1_203051>git add 203051.txt
+
+C:\Users\sterj\SI_2022_lab1_203051>git commit -m "Add docs"
+[master 80a7c2e] Add docs
+ 1 file changed, 138 insertions(+)
+ create mode 100644 203051.txt
+
+C:\Users\sterj\SI_2022_lab1_203051>git push origin master
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 2.26 KiB | 770.00 KiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MartinaSterjoska/SI_2022_lab1_203051
+   516ead3..80a7c2e  master -> master
+
+C:\Users\sterj\SI_2022_lab1_203051>git push origin branch1
+Everything up-to-date
+
+C:\Users\sterj\SI_2022_lab1_203051>git push origin branch2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MartinaSterjoska/SI_2022_lab1_203051
+   13b2dca..05eaf67  branch2 -> branch2
+
+C:\Users\sterj\SI_2022_lab1_203051>git log --graph --decorate --oneline
+* 80a7c2e (HEAD -> master, origin/master, origin/HEAD) Add docs
+*   8cb17f0 Merge branch2
+|\
+| * 05eaf67 (origin/branch2, branch2) Modify item #4 and add item #6
+* |   1fc3581 Merge branch 'branch1'
+|\ \
+| * | 311b7bf (origin/branch1, branch1) Change quantity of item #5
+| |/
+* / 516ead3 Change quantity of item #2
+|/
+* 13b2dca Add quantities to the items.
+* f22d9bd Add 5 items to the shopping list
+* 8a4691c Update README.md
+* 88ffa51 Initial commit
